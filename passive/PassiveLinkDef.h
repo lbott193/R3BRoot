@@ -20,5 +20,6 @@
 #pragma link C++ class R3BGeoMagnet;
 #pragma link C++ class R3BGeoPassivePar;
 #pragma link C++ class R3BPassiveContFact;
+#pragma link C++ class R3BCollimator;
 
 #endif
