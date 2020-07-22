@@ -96,18 +96,18 @@ void R3BTofdDigitizerCal::Exec(Option_t* opt)
         std::vector<Double_t>* energy = new std::vector<Double_t>[NumOfChannels];
         std::vector<Double_t>* time = new std::vector<Double_t>[NumOfChannels];
         std::vector<Double_t>* y = new std::vector<Double_t>[NumOfChannels];
-        std::vector<Double_t>* energy_temp = new std::vector<Double_t>[NumOfChannels];
-        std::vector<Double_t>* time_temp = new std::vector<Double_t>[NumOfChannels];
-        std::vector<Double_t>* y_temp = new std::vector<Double_t>[NumOfChannels];
+        //std::vector<Double_t>* energy_temp = new std::vector<Double_t>[NumOfChannels];
+        //std::vector<Double_t>* time_temp = new std::vector<Double_t>[NumOfChannels];
+        //std::vector<Double_t>* y_temp = new std::vector<Double_t>[NumOfChannels];
 
         for (Int_t i = 0; i < NumOfChannels; ++i)
         {
             time[i].push_back(-99999);
             energy[i].push_back(0);
             y[i].push_back(0);
-            time_temp[i].push_back(-99999);
-            energy_temp[i].push_back(0);
-            y_temp[i].push_back(0);
+            //time_temp[i].push_back(-99999);
+            //energy_temp[i].push_back(0);
+            //y_temp[i].push_back(0);
         }
         // Sim data:
         struct TempHit
@@ -175,8 +175,8 @@ void R3BTofdDigitizerCal::Exec(Option_t* opt)
 
         // creating the final hits
 
-        int layer_label;
-        int paddle_number;
+        int layer_label = 0;
+        int paddle_number = 0;
         Double_t yrnd, yns, ToT_up, ToT_down, ernd, ens, timernd, timeL_up = -1., timeL_down = -1., timeT_up = -1.,
                                                                   timeT_down = -1.;
 
@@ -258,6 +258,9 @@ void R3BTofdDigitizerCal::Exec(Option_t* opt)
         delete[] energy;
         delete[] time;
         delete[] y;
+        //delete[] energy_temp;
+        //delete[] time_temp;
+        //delete[] y_temp;
     };
 
     // running the digitizer for the tofd
